@@ -39,9 +39,17 @@ function ConvertTo-Base64{
 		$format = "unicode"}
 	else{
 		$format = "UTF8"}
+	Write-Verbose "Format: $format"
+	$stringCount = $string.count
+	Write-Verbose "Amount of items to encode: $stringCount"
+	$i = [int]0
 	foreach($_ in $string){
+		$i++
+		Write-Verbose "String: $i"
 		$plainTextString = $_
+		Write-Verbose "Plain text string: $plainTextString"
 		$value = [System.Text.Encoding]::$format.GetBytes($plainTextString)
+		Write-Verbose "Value: $value"
 		$convertedString = [Convert]::ToBase64String($value)
 		$convertedString}
 	}
