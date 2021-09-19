@@ -49,7 +49,10 @@ function ConvertFrom-Base64{
 			$value = [Convert]::FromBase64String($encodedString)
 			Write-Verbose "Value: $value"
 			$plainTextString = [System.Text.Encoding]::$format.GetString($value)
-			$plainTextString}
+			$outputTable = New-Object -TypeName psobject
+		$outputTable | Add-Member -MemberType NoteProperty -name PlainText -value $convertedString
+		$outputTable | Add-Member -MemberType NoteProperty -name Base64 -value $encodedString
+		$outputTable}
 		catch{
 			Write-Warning "Invalid string"}
 		}
