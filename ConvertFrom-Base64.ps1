@@ -22,7 +22,7 @@ function ConvertFrom-Base64{
 	ConvertFrom-Base64 -string c3RyaW5nMQ==,c3RyaW5nMg==
 	
 	.EXAMPLE
-	ConvertFrom-Base64 - string  -unicode
+	ConvertFrom-Base64 -string dABlAHMAdAA= -unicode
 	
 	.LINK
 	https://github.com/TokLabs/Powershell/blob/master/ConvertFrom-Base64.ps1
