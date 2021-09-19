@@ -44,7 +44,7 @@ function ConvertFrom-Base64{
 		$i++	
 		try{
 			$encodedString = $_
-			Write-Verbose "string $i: $encodedString"
+			Write-Verbose "string $i"+":"+" $encodedString"
 			$value = [Convert]::FromBase64String($encodedString)
 			Write-Verbose "value: $value"
 			$plainTextString = [System.Text.Encoding]::$format.GetString($value)
