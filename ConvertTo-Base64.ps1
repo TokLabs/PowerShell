@@ -40,5 +40,6 @@ function ConvertTo-Base64{
 	foreach($_ in $string){
 		$plainTextString = $_
 		$value = [System.Text.Encoding]::$format.GetBytes($plainTextString)
-		$convertedString = [Convert]::ToBase64String($value)}
+		$convertedString = [Convert]::ToBase64String($value)
+		$convertedString}
 	}
