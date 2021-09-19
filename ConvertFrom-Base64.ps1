@@ -54,7 +54,7 @@ function ConvertFrom-Base64{
 		$outputTable | Add-Member -MemberType NoteProperty -name Base64 -value $encodedString}
 		catch{
 			$outputTable = New-Object -TypeName psobject
-		$outputTable | Add-Member -MemberType NoteProperty -name PlainText -value Invalid string
+		$outputTable | Add-Member -MemberType NoteProperty -name PlainText -value "Invalid string"
 		$outputTable | Add-Member -MemberType NoteProperty -name Base64 -value $encodedString
 			Write-Warning "Invalid string"}
 		$outputTable}
