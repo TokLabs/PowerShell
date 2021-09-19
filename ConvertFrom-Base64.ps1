@@ -22,11 +22,11 @@ function ConvertFrom-Base64{
 	ConvertFrom-Base64 -unicode
 	
 	.LINK
-	https://github.com/TokLabs/Powershell/ConvertFrom-Base64.ps1
+	https://github.com/TokLabs/Powershell/blob/master/ConvertFrom-Base64.ps1
 	#>
 	
 	[CmdletBinding()] Param(
-		[parameter](Mandatory=$True)[string]$string,
+		[parameter(Mandatory=$True)][string]$string,
 		[parameter()][switch]$unicode)
 		
 	if ($unicode -eq $true){
