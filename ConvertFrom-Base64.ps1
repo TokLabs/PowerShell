@@ -38,14 +38,13 @@ function ConvertFrom-Base64{
 		$format = "UTF8"}
 		Write-Verbose "format: $format"
 		$stringCount = $string.count
-		Write-Verbose "Amount of items in string $stringCount"
+		Write-Verbose "Amount of items in string: $stringCount"
 		$i = [int]0
 	foreach($_ in $string){
-		$i++
-		Write-Verbose "string $i"+": $string"
+		$i++	
 		try{
 			$encodedString = $_
-			Write-Verbose "encodedString: $encodedString"
+			Write-Verbose "string $i: $encodedString"
 			$value = [Convert]::FromBase64String($encodedString)
 			Write-Verbose "value: $value"
 			$plainTextString = [System.Text.Encoding]::$format.GetString($value)
