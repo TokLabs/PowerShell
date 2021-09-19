@@ -19,7 +19,7 @@ function ConvertFrom-Base64{
 	ConvertFrom-Base64 -string 
 	
 	.EXAMPLE
-	ConvertFrom-Base64 -unicode
+	ConvertFrom-Base64 - string  -unicode
 	
 	.LINK
 	https://github.com/TokLabs/Powershell/blob/master/ConvertFrom-Base64.ps1
