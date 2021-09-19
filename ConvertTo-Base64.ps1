@@ -13,6 +13,9 @@ function ConvertTo-Base64{
 	Optional, by default this converts to Base64 using UTF8, Powershell encoding uses unicode.
 	
 	.EXAMPLE
+	ConvertTo-Base64 Test
+	
+	.EXAMPLE
 	ConvertTo-Base64 -string Test
 	
 	.EXAMPLE
@@ -22,7 +25,6 @@ function ConvertTo-Base64{
 	ConvertTo-Base64 -string test1,test2,test3
 	
 	.EXAMPLE
-	
 	ConvertTo-Base64 -string test -unicode
 	
 	.LINK
@@ -30,7 +32,7 @@ function ConvertTo-Base64{
 	#>
 	
 	[CmdletBinding()] Param(
-		[parameter(Mandatory=$True)][string]$string,
+		[parameter(Position = 0, Mandatory=$True)][string[]]$string,
 		[parameter()][switch]$unicode)
 		
 	if($unicode -eq $true){
