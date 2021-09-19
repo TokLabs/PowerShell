@@ -52,9 +52,8 @@ function ConvertTo-Base64{
 		$value = [System.Text.Encoding]::$format.GetBytes($plainTextString)
 		Write-Verbose "Value: $value"
 		$convertedString = [Convert]::ToBase64String($value)
-		$tempObject = New-Object -TypeName psobject
-		$tempObject | Add-Member -MemberType NoteProperty -name PlainText -value $plainTextString
-		$tempObject | Add-Member -MemberType NoteProperty -name Base64 -value $convertedString
-		$primaryTable += $tempObject
-		$primaryTable}
+		$outputTable = New-Object -TypeName psobject
+		$outputTable | Add-Member -MemberType NoteProperty -name PlainText -value $plainTextString
+		$outputTable | Add-Member -MemberType NoteProperty -name Base64 -value $convertedString
+		$outputTable}
 	}
