@@ -50,10 +50,12 @@ function ConvertFrom-Base64{
 			Write-Verbose "Value: $value"
 			$plainTextString = [System.Text.Encoding]::$format.GetString($value)
 			$outputTable = New-Object -TypeName psobject
-		$outputTable | Add-Member -MemberType NoteProperty -name PlainText -value $convertedString
-		$outputTable | Add-Member -MemberType NoteProperty -name Base64 -value $encodedString
-		$outputTable}
+		$outputTable | Add-Member -MemberType NoteProperty -name PlainText -value $plainTextString
+		$outputTable | Add-Member -MemberType NoteProperty -name Base64 -value $encodedString}
 		catch{
+			$outputTable = New-Object -TypeName psobject
+		$outputTable | Add-Member -MemberType NoteProperty -name PlainText -value Invalid string
+		$outputTable | Add-Member -MemberType NoteProperty -name Base64 -value $encodedString
 			Write-Warning "Invalid string"}
-		}
+		$outputTable}
 	}
