@@ -35,7 +35,7 @@ function ConvertTo-Base64{
 		[parameter(Position = 0, Mandatory=$True)][string[]]$string,
 		[parameter()][switch]$unicode)
 	
-	$primaryTablev = @()	
+	$primaryTable = @()	
 	if($unicode -eq $true){
 		$format = "unicode"}
 	else{
@@ -52,9 +52,9 @@ function ConvertTo-Base64{
 		$value = [System.Text.Encoding]::$format.GetBytes($plainTextString)
 		Write-Verbose "Value: $value"
 		$convertedString = [Convert]::ToBase64String($value)
-		$tempObject = [PSCustomObject]@{
-			PlainText = $plainTextString
-			Base64 = $convertedString}
+		$tempObject = New-Object -TypeName psobject
+		$tempObject | Add-Member -MemberType NoteProperty -name PlainText -value $plainTextString
+		$tempObject | Add-Member -MemberType NoteProperty -name Base64 -value $convertedString
 		$primaryTable += $tempObject
 		$primaryTable}
 	}
