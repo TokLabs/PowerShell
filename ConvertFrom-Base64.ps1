@@ -42,7 +42,7 @@ function ConvertFrom-Base64{
 		$i = [int]0
 	foreach($_ in $string){
 		$i++
-		Write-Verbose "string"+"$i"+": $string"
+		Write-Verbose "string $i"+": $string"
 		try{
 			$encodedString = $_
 			Write-Verbose "encodedString: $encodedString"
