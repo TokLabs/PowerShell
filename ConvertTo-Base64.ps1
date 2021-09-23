@@ -35,7 +35,6 @@ function ConvertTo-Base64{
 		[parameter(Position = 0, Mandatory=$True)][string[]]$string,
 		[parameter()][switch]$unicode)
 	
-	$primaryTable = @()	
 	if($unicode -eq $true){
 		$format = "unicode"}
 	else{
