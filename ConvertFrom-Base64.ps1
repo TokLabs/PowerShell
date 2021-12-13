@@ -4,12 +4,12 @@ function ConvertFrom-Base64{
 	Converts a plaintext string from Base64.
 	
 	.DESCRIPTION
-	Powershell cmdlet to convert one or more Base64 strings and output to a table. This cmdlet can convert both UTF8 and UTF-16LE(Powershell's Base64 encoding)
+	Powershell cmdlet to convert one or more Base64 strings and output to a table. This cmdlet can convert both UTF8 and UTF-16LE(Powershell's Base64 encoding).
 	
-	.PARAMETER string
+	.PARAMETER String
 	Mandatory, specifies atleast 1 string to convert from Base64.
 	
-	.PARAMETER unicode
+	.PARAMETER Unicode
 	Optional, by default this converts from Base64 using UTF8, Powershell encoding uses unicode.
 	
 	.EXAMPLE
