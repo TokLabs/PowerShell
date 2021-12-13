@@ -4,7 +4,7 @@ function ConvertTo-Base64{
 	Converts a plaintext string to Base64.
 	
 	.DESCRIPTION
-	
+	Powershell cmdlet to convert 1 or more strings from Base64. This is compatible with both UTF8 and UTF-16LE (Powershell Base64 encoding) flavours of Base64.
 	
 	.PARAMETER string
 	Mandatory, specifies atleast 1 string to convert to Base64, to include spaces, wrap string in quotations or specify a variable.
@@ -16,43 +16,43 @@ function ConvertTo-Base64{
 	ConvertTo-Base64 Test
 	
 	.EXAMPLE
-	ConvertTo-Base64 -string Test
+	ConvertTo-Base64 -String Test
 	
 	.EXAMPLE
-	ConvertTo-Base64 -string "This is a test"
+	ConvertTo-Base64 -String "This is a test"
 	
 	.EXAMPLE
-	ConvertTo-Base64 -string test1,test2,test3
+	ConvertTo-Base64 -String test1,test2,test3
 	
 	.EXAMPLE
-	ConvertTo-Base64 -string test -unicode
+	ConvertTo-Base64 -String test -Unicode
 	
 	.LINK
 	https://github.com/TokLabs/Powershell/blob/master/ConvertTo-Base64.ps1
 	#>
 	
 	[CmdletBinding()] Param(
-		[parameter(Position = 0, Mandatory=$True)][string[]]$string,
-		[parameter()][switch]$unicode)
+		[parameter(Position = 0, Mandatory=$True)][string[]]$String,
+		[parameter()][switch]$Unicode)
 	
-	if($unicode -eq $true){
-		$format = "unicode"}
+	if($Unicode -eq $True){
+		$Format = "unicode"}
 	else{
-		$format = "UTF8"}
-	Write-Verbose "Format: $format"
-	$stringCount = $string.count
-	Write-Verbose "Amount of items to encode: $stringCount"
+		$Format = "UTF8"}
+	Write-Verbose "Format: $Format"
+	$StringCount = $String.count
+	Write-Verbose "Amount of items to encode: $StringCount"
 	$i = [int]0
-	foreach($_ in $string){
+	foreach($_ in $String){
 		$i++	
 		Write-Verbose "String $i"
-		$plainTextString = $_
-		Write-Verbose "Plaintext: $plainTextString"
-		$value = [System.Text.Encoding]::$format.GetBytes($plainTextString)
-		Write-Verbose "Value: $value"
-		$convertedString = [Convert]::ToBase64String($value)
-		$outputTable = New-Object -TypeName psobject
-		$outputTable | Add-Member -MemberType NoteProperty -name PlainText -value $plainTextString
-		$outputTable | Add-Member -MemberType NoteProperty -name Base64 -value $convertedString
-		$outputTable}
+		$PlainTextString = $_
+		Write-Verbose "Plaintext: $PlainTextString"
+		$Value = [System.Text.Encoding]::$Format.GetBytes($PlainTextString)
+		Write-Verbose "Value: $Value"
+		$ConvertedString = [Convert]::ToBase64String($Value)
+		$OutputTable = New-Object -TypeName psobject
+		$OutputTable | Add-Member -MemberType NoteProperty -name PlainText -value $PlainTextString
+		$OutputTable | Add-Member -MemberType NoteProperty -name Base64 -value $ConvertedString
+		$OutputTable}
 	}
