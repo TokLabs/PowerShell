@@ -6,10 +6,10 @@ function ConvertTo-Base64{
 	.DESCRIPTION
 	Powershell cmdlet to convert 1 or more strings from Base64. This is compatible with both UTF8 and UTF-16LE (Powershell Base64 encoding) flavours of Base64.
 	
-	.PARAMETER string
+	.PARAMETER String
 	Mandatory, specifies atleast 1 string to convert to Base64, to include spaces, wrap string in quotations or specify a variable.
 	
-	.PARAMETER unicode
+	.PARAMETER Unicode
 	Optional, by default this converts to Base64 using UTF8, Powershell encoding uses unicode.
 	
 	.EXAMPLE
