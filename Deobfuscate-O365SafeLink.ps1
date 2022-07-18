@@ -4,7 +4,7 @@ function Deobfuscate-O365SafeLink{
 	Deobfuscates Office 365 safe links.
 	
 	.DESCRIPTION
-	Powershell cmdlet to debobfuscate Office 365's safe links.
+	PowerShell cmdlet to debobfuscate Office 365's safe links.
 	
 	.PARAMETER Uri
 	Specifies a safe link to deobfuscate.
@@ -13,7 +13,7 @@ function Deobfuscate-O365SafeLink{
 	Deobfuscate-O365SafeLink -Uri "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.toklabs.com&data=firstname.lastname%40domain.com&data=xxxx&reserved=0"
 	
 	.LINK
-	https://github.com/TokLabs/Powershell/blob/master/Deobfuscate-O365SafeLink.ps1
+	https://github.com/TokLabs/PowerShell/blob/master/Deobfuscate-O365SafeLink.ps1
 	#>
 	
 	[CmdletBinding()] param(
