@@ -25,7 +25,7 @@ function ConvertFrom-Base64{
 	ConvertFrom-Base64 -String dABlAHMAdAA= -Unicode
 	
 	.LINK
-	https://github.com/TokLabs/PowerShell/blob/master/ConvertFrom-Base64.ps1
+	https://github.com/TokLabs/PowerShell/blob/main/ConvertFrom-Base64.ps1
 	#>
 	
 	[CmdletBinding()] Param(
