@@ -34,7 +34,7 @@ Function Get-StringHash{
     Get-Random | Get-StringHash -Algorithm MD5
     
     .LINK
-    https://github.com/TokLabs/PowerShell/blob/master/Get-StringHash.ps1
+    https://github.com/TokLabs/PowerShell/blob/main/Get-StringHash.ps1
 
     #>
     [CmdletBinding()]Param(
