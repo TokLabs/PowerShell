@@ -28,7 +28,7 @@ function ConvertTo-Base64{
 	ConvertTo-Base64 -String test -Unicode
 	
 	.LINK
-	https://github.com/TokLabs/PowerShell/blob/master/ConvertTo-Base64.ps1
+	https://github.com/TokLabs/PowerShell/blob/main/ConvertTo-Base64.ps1
 	#>
 	
 	[CmdletBinding()] Param(
