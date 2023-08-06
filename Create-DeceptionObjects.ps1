@@ -6,7 +6,6 @@ Function Create-DeceptionObjects{
     .DESCRIPTION
     Creates garbage files based on a specified folder/file structure, including file/directory names and timestamps.
 
-
     .PARAMETER MirrorSource
     Specifies the location to copy it's structure from.
 
@@ -18,9 +17,8 @@ Function Create-DeceptionObjects{
 
     .LINK
     https://github.com/TokLabs/Powershell/blob/main/Create-DeceptionObjects.ps1
-
-
     #>
+    
     [CmdletBinding()] Param(
         [Parameter(Position = 0,Mandatory = $True)]
         [String]
