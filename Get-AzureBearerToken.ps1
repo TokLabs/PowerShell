@@ -30,14 +30,14 @@ function Get-AzureBearerToken{
     .LINK
     https://github.com/TokLabs/PowerShell/blob/main/Get-AzureBearerToken.ps1
     #>
-	
+    
     [CmdletBinding()]Param(
     [Parameter(
         Position = 0,
         Mandatory=$false)]
     [string]
     $TenantID,
-
+    
     [Parameter(
         Position = 1,
         Mandatory=$false)]
@@ -49,12 +49,12 @@ function Get-AzureBearerToken{
         Mandatory=$false)]
     [string]
     $ClientSecret,
-
+    
     [Parameter(
         Mandatory=$false)]
     [string]
     $Conf)
-
+    
     if($TenantID -and $ClientID -and $ClientSecret){
         }
     else{
@@ -89,5 +89,4 @@ function Get-AzureBearerToken{
             grant_type = $GrantType
             resource = $Resource}
         }
-    Invoke-RestMethod @Request
-    }
+    Invoke-RestMethod @Request}
