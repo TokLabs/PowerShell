@@ -7,24 +7,24 @@ function Get-AzureBearerToken{
 	PowerShell cmdlet to retreive a bearer token from Azure.
 
 	.PARAMETER TenantID
-    Specifies Tenant (Directory) ID.
+    	Specifies Tenant (Directory) ID.
 
 	.PARAMETER ClientID
-    Specifies Client (Application) ID that is assign to the app registered for use with this.
+    	Specifies Client (Application) ID that is assign to the app registered for use with this.
 
 	.PARAMETER ClientSecret
-    Specifies Client Secret associated with the Client ID. (Any solutions that are logging PowerShell commandline WILL capture this.)
+    	Specifies Client Secret associated with the Client ID. (Any solutions that are logging PowerShell commandline WILL capture this.)
 
 	.PARAMETER Conf
-    Path to an XML formatted configuration file that contains TenantID, ClientID and ClientSecret.
+    	Path to an XML formatted configuration file that contains TenantID, ClientID and ClientSecret.
 	
 	.EXAMPLE
 	Get-AzureBearerToken -TenantID x0xxx10-00x0-0x01-0xxx-x0x0x01xx100 -ClientID x0x1010x-xx01-1101-0x1x-xx0xxx101xx -ClientSecret Xx_Xx0XXX1Xxx.1x0XXxXxXxxX][x1X:xX01.XXx
 
-    .EXAMPLE
+    	.EXAMPLE
 	Get-AzureBearerToken -Conf C:\Users\User\conf.ini
 
-    .EXAMPLE
+    	.EXAMPLE
 	Get-AzureBearerToken x0xxx10-00x0-0x01-0xxx-x0x0x01xx100 x0x1010x-xx01-1101-0x1x-xx0xxx101xx Xx_Xx0XXX1Xxx.1x0XXxXxXxxX][x1X:xX01.XXx
 	
 	.LINK
